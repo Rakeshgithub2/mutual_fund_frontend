@@ -1,0 +1,306 @@
+/* Mobile Responsiveness Enhancements for All Pages */
+
+/* Base mobile optimizations */
+@media (max-width: 640px) {
+  /* Better touch targets - minimum 44x44px */
+  button,
+  a,
+  input,
+  select {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Improved text readability on mobile */
+  body {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  h1 {
+    font-size: 1.5rem !important;
+  }
+
+  h2 {
+    font-size: 1.25rem !important;
+  }
+
+  h3 {
+    font-size: 1.125rem !important;
+  }
+
+  /* Better spacing for mobile */
+  .container,
+  main {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+
+  /* Card improvements */
+  .card,
+  [data-slot='card'] {
+    border-radius: 0.75rem !important;
+    padding: 1rem !important;
+  }
+
+  /* Grid improvements - stack on mobile */
+  .grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Better input fields */
+  input,
+  textarea,
+  select {
+    font-size: 16px !important; /* Prevents zoom on iOS */
+    padding: 0.75rem !important;
+  }
+
+  /* Modal/Dialog improvements */
+  [role='dialog'] {
+    max-width: 95vw !important;
+    margin: 0.5rem !important;
+  }
+
+  /* Table responsiveness */
+  table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Hide less important content on mobile */
+  .hide-on-mobile {
+    display: none !important;
+  }
+
+  /* Stack flex items on mobile */
+  .flex-responsive {
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .grid-responsive {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  h1 {
+    font-size: 2rem !important;
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
+  }
+}
+
+/* Chat page specific */
+.chat-container {
+  height: calc(100vh - 180px);
+}
+
+@media (min-width: 640px) {
+  .chat-container {
+    height: calc(100vh - 220px);
+  }
+}
+
+/* Compare page specific */
+.compare-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .compare-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .compare-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Overlap page specific */
+.overlap-card {
+  padding: 1rem;
+}
+
+@media (min-width: 640px) {
+  .overlap-card {
+    padding: 1.5rem;
+  }
+}
+
+/* Fund card responsive */
+.fund-card {
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+@media (min-width: 640px) {
+  .fund-card {
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+  }
+}
+
+/* Better scrollbar on mobile */
+@media (max-width: 640px) {
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+  }
+}
+
+/* Improve button sizes on mobile */
+@media (max-width: 640px) {
+  .btn,
+  [data-slot='button'] {
+    padding: 0.625rem 1rem !important;
+    font-size: 0.875rem !important;
+    min-height: 44px;
+  }
+}
+
+/* Navigation improvements */
+@media (max-width: 640px) {
+  nav {
+    padding: 0.5rem !important;
+  }
+
+  nav a,
+  nav button {
+    padding: 0.75rem !important;
+    font-size: 0.875rem !important;
+  }
+}
+
+/* Form improvements */
+@media (max-width: 640px) {
+  form {
+    padding: 1rem !important;
+  }
+
+  label {
+    font-size: 0.875rem !important;
+    margin-bottom: 0.375rem !important;
+  }
+}
+
+/* Market indices improvements */
+@media (max-width: 640px) {
+  .market-index-card {
+    min-width: 140px !important;
+    padding: 0.75rem !important;
+  }
+}
+
+/* Search bar improvements */
+@media (max-width: 640px) {
+  .search-container {
+    padding: 0.75rem !important;
+  }
+
+  .search-input {
+    font-size: 16px !important;
+    height: 44px !important;
+  }
+}
+
+/* Better spacing for fund lists */
+@media (max-width: 640px) {
+  .fund-list {
+    gap: 0.75rem !important;
+  }
+
+  .fund-list-item {
+    padding: 1rem !important;
+  }
+}
+
+/* Improve data tables on mobile */
+@media (max-width: 640px) {
+  .data-table {
+    font-size: 0.75rem !important;
+  }
+
+  .data-table th,
+  .data-table td {
+    padding: 0.5rem !important;
+  }
+}
+
+/* Better modals on mobile */
+@media (max-width: 640px) {
+  [role='dialog'],
+  .modal {
+    max-height: 90vh !important;
+    overflow-y: auto !important;
+  }
+}
+
+/* Improved chart containers */
+@media (max-width: 640px) {
+  .chart-container {
+    height: 250px !important;
+  }
+
+  .recharts-wrapper {
+    font-size: 0.75rem !important;
+  }
+}
+
+/* Better footer on mobile */
+@media (max-width: 640px) {
+  footer {
+    padding: 1.5rem 1rem !important;
+    font-size: 0.875rem !important;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Dark mode improvements for mobile */
+@media (max-width: 640px) {
+  .dark {
+    background-color: #111827;
+  }
+
+  .dark .card,
+  .dark [data-slot='card'] {
+    background-color: #1f2937;
+    border-color: #374151;
+  }
+}
+
+/* Safe area insets for notched devices */
+@supports (padding: max(0px)) {
+  body {
+    padding-left: max(0px, env(safe-area-inset-left));
+    padding-right: max(0px, env(safe-area-inset-right));
+  }
+
+  .header,
+  .footer {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+}

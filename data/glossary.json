@@ -1,0 +1,332 @@
+{
+  "terms": [
+    {
+      "id": "nav",
+      "term": "NAV (Net Asset Value)",
+      "definition": "The per-unit price of a mutual fund, calculated by dividing the total value of all assets minus liabilities by the number of units outstanding.",
+      "examples": [
+        "Axis Bluechip Fund NAV: ₹45.32",
+        "ICICI Prudential NAV: ₹38.15",
+        "SBI Small Cap NAV: ₹28.92"
+      ],
+      "investorImpact": "NAV determines the price you pay when buying or selling fund units. A lower NAV doesn't mean a better fund - compare returns and expense ratios instead.",
+      "quiz": {
+        "question": "If a fund has NAV of ₹50 and you invest ₹10,000, how many units will you get?",
+        "options": ["200 units", "250 units", "300 units", "150 units"],
+        "correctAnswer": 0,
+        "explanation": "Divide your investment by NAV: ₹10,000 ÷ ₹50 = 200 units. This is how mutual fund units are calculated - your investment amount divided by the current NAV gives you the number of units allocated."
+      }
+    },
+    {
+      "id": "aum",
+      "term": "AUM (Assets Under Management)",
+      "definition": "The total market value of all investments managed by a mutual fund. It represents the size and scale of the fund.",
+      "examples": [
+        "Axis Bluechip Fund AUM: ₹45,000 Crore",
+        "ICICI Prudential AUM: ₹52,000 Crore",
+        "Vanguard Nifty 50 AUM: ₹85,000 Crore"
+      ],
+      "investorImpact": "Larger AUM can mean better liquidity and lower costs, but very large funds may struggle to find good investment opportunities.",
+      "quiz": {
+        "question": "What does a higher AUM generally indicate?",
+        "options": [
+          "Better returns",
+          "Larger fund size and investor trust",
+          "Lower expense ratio",
+          "Higher risk"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A higher AUM indicates that more investors have put their money in the fund, showing trust and confidence. It also means the fund is larger in size, which can lead to better negotiating power and potentially lower costs per investor."
+      }
+    },
+    {
+      "id": "expense-ratio",
+      "term": "Expense Ratio",
+      "definition": "The annual cost of operating a mutual fund, expressed as a percentage of AUM. It includes management fees, administrative costs, and other expenses.",
+      "examples": [
+        "Vanguard Nifty 50 ETF: 0.12%",
+        "Axis Bluechip Fund: 0.65%",
+        "SBI Small Cap Fund: 1.05%"
+      ],
+      "investorImpact": "Lower expense ratios mean more of your money stays invested. Over 20 years, a 0.5% difference in expense ratio can significantly impact returns.",
+      "quiz": {
+        "question": "If you invest ₹1,00,000 in a fund with 0.75% expense ratio, how much is deducted annually?",
+        "options": ["₹750", "₹1,500", "₹7,500", "₹75"],
+        "correctAnswer": 0,
+        "explanation": "Calculate 0.75% of ₹1,00,000: (0.75/100) × ₹1,00,000 = ₹750. This amount is deducted from your investment each year to cover fund management and operational costs. Lower expense ratios mean more money stays invested for you."
+      }
+    },
+    {
+      "id": "cagr",
+      "term": "CAGR (Compound Annual Growth Rate)",
+      "definition": "The average annual return of an investment over a specific period, accounting for compounding. It smooths out volatility to show consistent growth.",
+      "examples": [
+        "5-year CAGR of 18.5%",
+        "3-year CAGR of 22.3%",
+        "1-year return of 19.8%"
+      ],
+      "investorImpact": "CAGR helps you compare fund performance fairly across different time periods. A fund with 20% CAGR over 5 years is generally better than one with 15% CAGR.",
+      "quiz": {
+        "question": "What does CAGR account for that simple average returns don't?",
+        "options": [
+          "Inflation",
+          "Compounding effect",
+          "Market volatility",
+          "Fund expenses"
+        ],
+        "correctAnswer": 1,
+        "explanation": "CAGR (Compound Annual Growth Rate) accounts for the compounding effect - when your returns generate their own returns. Simple averages don't show this snowball effect, making CAGR a more accurate measure of investment growth over time."
+      }
+    },
+    {
+      "id": "large-cap",
+      "term": "Large Cap Funds",
+      "definition": "Mutual funds that invest in large, well-established companies with market capitalization typically above ₹20,000 crore. These are considered less risky.",
+      "examples": ["Reliance Industries", "HDFC Bank", "Infosys"],
+      "investorImpact": "Large cap funds offer stability and lower volatility, making them suitable for conservative investors. They typically have lower returns but are more predictable.",
+      "quiz": {
+        "question": "Which characteristic best describes large cap companies?",
+        "options": [
+          "High growth potential",
+          "Established, stable businesses",
+          "High volatility",
+          "Emerging market exposure"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Large cap companies are established, mature businesses with proven track records. They offer stability and predictable performance rather than explosive growth. Think of companies like Reliance, HDFC Bank, and TCS - they're market leaders with consistent operations."
+      }
+    },
+    {
+      "id": "mid-cap",
+      "term": "Mid Cap Funds",
+      "definition": "Mutual funds investing in mid-sized companies with market cap between ₹5,000-₹20,000 crore. They offer a balance between growth and stability.",
+      "examples": ["Bharti Airtel", "Kotak Mahindra Bank", "Asian Paints"],
+      "investorImpact": "Mid cap funds provide higher growth potential than large caps with moderate risk. They're suitable for investors with medium-term horizons (5-10 years).",
+      "quiz": {
+        "question": "Mid cap funds are best suited for investors with which time horizon?",
+        "options": [
+          "Less than 1 year",
+          "1-3 years",
+          "5-10 years",
+          "Any time horizon"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Mid cap funds need 5-10 years to show their true potential. This timeframe allows you to ride out market volatility and benefit from the growth of mid-sized companies as they expand and mature into larger businesses."
+      }
+    },
+    {
+      "id": "small-cap",
+      "term": "Small Cap Funds",
+      "definition": "Mutual funds investing in smaller companies with market cap below ₹5,000 crore. These offer high growth potential but with higher risk and volatility.",
+      "examples": ["Lupin", "Cipla", "Biocon"],
+      "investorImpact": "Small cap funds can deliver exceptional returns but are volatile. They require patience and a long-term investment horizon (10+ years) to weather market cycles.",
+      "quiz": {
+        "question": "What is the primary trade-off with small cap investments?",
+        "options": [
+          "Lower returns for stability",
+          "Higher growth potential but higher volatility",
+          "No dividend income",
+          "Limited liquidity"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Small cap stocks can deliver exceptional returns (often 2-3x the market) but experience wild price swings. You need patience and a strong stomach to handle 30-40% drops during bear markets. The reward for this volatility is potentially much higher long-term gains."
+      }
+    },
+    {
+      "id": "etf",
+      "term": "ETF (Exchange Traded Fund)",
+      "definition": "A fund that tracks an index (like Nifty 50) and trades on stock exchanges like regular stocks. ETFs are passive investments with low expense ratios.",
+      "examples": [
+        "Vanguard India ETF - Nifty 50",
+        "Motilal Oswal Nifty 50 ETF",
+        "iShares Sensex ETF"
+      ],
+      "investorImpact": "ETFs offer low-cost, diversified exposure to market indices. They're ideal for long-term investors who want to track market performance without active management.",
+      "quiz": {
+        "question": "What is the main advantage of ETFs over actively managed funds?",
+        "options": [
+          "Higher returns",
+          "Lower expense ratios",
+          "Better fund managers",
+          "More frequent trading"
+        ],
+        "correctAnswer": 1,
+        "explanation": "ETFs typically charge 0.1-0.5% expense ratios compared to 1-2% for actively managed funds. Over 20 years, this difference can mean lakhs of rupees saved. Since most active funds fail to beat the index consistently, ETFs offer a smart, low-cost alternative."
+      }
+    },
+    {
+      "id": "dividend-yield",
+      "term": "Dividend Yield",
+      "definition": "The annual dividend income from a fund expressed as a percentage of its NAV. It shows the income component of returns.",
+      "examples": [
+        "Motilal Oswal Dividend Yield Fund: 3.5%",
+        "Power Grid dividend: 5.2%",
+        "NTPC dividend: 4.8%"
+      ],
+      "investorImpact": "Dividend yield funds are suitable for income-seeking investors. They provide regular cash flow, making them popular with retirees.",
+      "quiz": {
+        "question": "Who would benefit most from dividend yield funds?",
+        "options": [
+          "Young investors",
+          "Retirees seeking regular income",
+          "Growth-focused investors",
+          "Short-term traders"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Retirees benefit most because dividend yield funds provide regular cash flow (monthly or quarterly) to meet living expenses without selling units. It's like receiving rent from your investments, making it perfect for those who need steady income rather than growth."
+      }
+    },
+    {
+      "id": "sip",
+      "term": "SIP (Systematic Investment Plan)",
+      "definition": "A disciplined investment method where you invest a fixed amount regularly in mutual funds. It helps in rupee cost averaging and reduces market timing risk.",
+      "examples": [
+        "Monthly SIP of ₹5,000",
+        "Weekly SIP of ₹1,000",
+        "Quarterly SIP of ₹15,000"
+      ],
+      "investorImpact": "SIP is the best way for salaried individuals to build wealth. It removes emotion from investing and helps you buy more units when prices are low.",
+      "quiz": {
+        "question": "What is the minimum SIP amount in most mutual funds?",
+        "options": ["₹100", "₹500", "₹1,000", "₹5,000"],
+        "correctAnswer": 1,
+        "explanation": "Most mutual funds allow SIPs starting from ₹500 per month, making investing accessible to everyone. Some funds even allow ₹100 SIPs. This low entry barrier means you can start your investment journey with just the cost of a few cups of coffee!"
+      }
+    },
+    {
+      "id": "returns",
+      "term": "Returns",
+      "definition": "The profit or loss from an investment, usually expressed as a percentage. Returns can be measured over different periods (1Y, 3Y, 5Y).",
+      "examples": [
+        "15% annual return",
+        "22% 3-year CAGR",
+        "₹1 lakh became ₹1.5 lakh"
+      ],
+      "investorImpact": "Past returns don't guarantee future performance, but they help compare funds. Always check 5-year and 10-year returns for mutual funds.",
+      "quiz": {
+        "question": "Which return period is most reliable for evaluating a mutual fund?",
+        "options": ["1 year", "3 years", "5-10 years", "1 month"],
+        "correctAnswer": 2,
+        "explanation": "5-10 year returns are most reliable because they cover complete market cycles (bull and bear markets). Short-term returns can be misleading - a fund might look great in a bull market but perform poorly long-term. Always check performance across multiple market conditions."
+      }
+    },
+    {
+      "id": "equity",
+      "term": "Equity",
+      "definition": "Ownership in a company through stocks. Equity mutual funds invest in shares of companies and aim for capital appreciation.",
+      "examples": ["Equity shares of TCS", "Reliance equity", "Infosys stock"],
+      "investorImpact": "Equity investments offer highest long-term returns but come with volatility. Stay invested for 5+ years to ride out market ups and downs.",
+      "quiz": {
+        "question": "What is the ideal time horizon for equity investments?",
+        "options": ["Less than 1 year", "1-3 years", "3-5 years", "5+ years"],
+        "correctAnswer": 3,
+        "explanation": "Equity needs 5+ years (ideally 7-10 years) to deliver optimal returns. This timeframe smooths out market volatility and lets compounding work its magic. Historical data shows that the probability of loss in equity drops significantly when holding period exceeds 5 years."
+      }
+    },
+    {
+      "id": "debt",
+      "term": "Debt Funds",
+      "definition": "Mutual funds that invest in fixed-income securities like bonds, treasury bills, and corporate debt. They offer lower but stable returns.",
+      "examples": ["Government bonds", "Corporate bonds", "Treasury bills"],
+      "investorImpact": "Debt funds are less risky than equity funds and suitable for conservative investors or short-term goals (1-3 years).",
+      "quiz": {
+        "question": "Debt funds are ideal for which investment horizon?",
+        "options": [
+          "10+ years",
+          "5-10 years",
+          "1-3 years",
+          "Less than 6 months"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Debt funds work best for 1-3 year goals because they offer stable, predictable returns with low volatility. They're perfect for short to medium-term needs like buying a car, wedding expenses, or emergency funds. For longer horizons, equity delivers better inflation-adjusted returns."
+      }
+    },
+    {
+      "id": "nifty",
+      "term": "Nifty 50",
+      "definition": "India's benchmark stock market index comprising 50 large-cap companies. It represents about 65% of the free-float market capitalization of NSE.",
+      "examples": ["Reliance", "TCS", "HDFC Bank", "Infosys", "ITC"],
+      "investorImpact": "Nifty 50 is used as a benchmark to compare fund performance. Index funds tracking Nifty offer broad market exposure at low cost.",
+      "quiz": {
+        "question": "How many companies are in the Nifty 50 index?",
+        "options": ["25", "50", "100", "500"],
+        "correctAnswer": 1,
+        "explanation": "The Nifty 50 comprises exactly 50 companies - India's top large-cap stocks across 13 sectors. These companies represent about 65% of the total market value of NSE-listed companies, making it a great benchmark for Indian equity performance."
+      }
+    },
+    {
+      "id": "sensex",
+      "term": "Sensex",
+      "definition": "The BSE Sensex is India's oldest stock market index comprising 30 well-established and financially sound companies listed on BSE.",
+      "examples": ["HDFC Bank", "Reliance", "TCS", "Infosys", "Kotak Bank"],
+      "investorImpact": "Sensex movements indicate overall market sentiment. Many funds use it as a performance benchmark.",
+      "quiz": {
+        "question": "Sensex consists of how many companies?",
+        "options": ["20", "30", "50", "100"],
+        "correctAnswer": 1,
+        "explanation": "The BSE Sensex tracks 30 well-established companies from BSE. It's India's oldest stock market index (since 1986) and represents the pulse of the Indian economy. These 30 companies are leaders in their respective sectors and financially sound."
+      }
+    },
+    {
+      "id": "elss",
+      "term": "ELSS (Equity Linked Savings Scheme)",
+      "definition": "Tax-saving mutual funds with a 3-year lock-in period. Investments up to ₹1.5 lakh qualify for deduction under Section 80C.",
+      "examples": [
+        "Axis Long Term Equity Fund",
+        "Mirae Asset Tax Saver Fund",
+        "DSP Tax Saver Fund"
+      ],
+      "investorImpact": "ELSS offers dual benefits: tax savings and equity market returns. It has the shortest lock-in among 80C instruments.",
+      "quiz": {
+        "question": "What is the lock-in period for ELSS funds?",
+        "options": ["1 year", "3 years", "5 years", "No lock-in"],
+        "correctAnswer": 1,
+        "explanation": "ELSS has the shortest lock-in of just 3 years among all Section 80C tax-saving options. PPF has 15 years, NSC has 5 years, but ELSS gives you tax benefits plus equity returns with only 3 years commitment. You can withdraw anytime after 3 years."
+      }
+    },
+    {
+      "id": "benchmark",
+      "term": "Benchmark",
+      "definition": "A standard index (like Nifty 50 or Sensex) used to measure a fund's performance. Funds aim to beat their benchmark.",
+      "examples": [
+        "Nifty 50 for large-cap funds",
+        "Nifty Midcap 150 for mid-cap funds",
+        "Nifty Smallcap 250"
+      ],
+      "investorImpact": "Always compare a fund's returns against its benchmark. A fund consistently beating its benchmark is well-managed.",
+      "quiz": {
+        "question": "What does it mean when a fund 'beats the benchmark'?",
+        "options": [
+          "Has lower expense ratio",
+          "Delivers higher returns than the index",
+          "Has higher AUM",
+          "Is less risky"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Beating the benchmark means the fund delivered higher returns than its comparison index. For example, if Nifty 50 returned 12% and your large-cap fund returned 15%, it beat the benchmark by 3%. This shows the fund manager added value through smart stock selection."
+      }
+    },
+    {
+      "id": "portfolio",
+      "term": "Portfolio",
+      "definition": "The collection of all your investments including mutual funds, stocks, bonds, and other assets. Diversification across asset classes reduces risk.",
+      "examples": [
+        "60% equity, 30% debt, 10% gold",
+        "Mix of large-cap and mid-cap funds",
+        "Balanced portfolio"
+      ],
+      "investorImpact": "A well-diversified portfolio balances risk and returns. Don't put all your money in one fund or asset class.",
+      "quiz": {
+        "question": "Why is portfolio diversification important?",
+        "options": [
+          "To maximize returns",
+          "To reduce risk",
+          "To save on taxes",
+          "To increase liquidity"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Diversification reduces risk by spreading investments across different asset classes, sectors, and companies. When one investment falls, others may rise, balancing your portfolio. It's the classic 'don't put all eggs in one basket' principle - protecting your wealth while still pursuing growth."
+      }
+    }
+  ]
+}

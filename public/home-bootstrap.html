@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MF Analyzer - Home</title>
+
+    <!-- Bootstrap 5.3.8 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <style>
+      /* Mobile-first custom styles */
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          Oxygen, Ubuntu, Cantarell, sans-serif;
+        background-color: #ffffff;
+        padding-top: 120px; /* Space for fixed header */
+      }
+
+      /* Sticky Header - First Row */
+      .top-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: #ffffff;
+        border-bottom: 1px solid #e5e7eb;
+        z-index: 1030;
+        padding: 12px 16px;
+      }
+
+      .logo-symbol {
+        width: 36px;
+        height: 36px;
+        background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: 700;
+        font-size: 18px;
+      }
+
+      .site-name {
+        font-size: 18px;
+        font-weight: 600;
+        color: #111827;
+        margin: 0;
+        white-space: nowrap;
+      }
+
+      .profile-icon {
+        width: 36px;
+        height: 36px;
+        background-color: #e5e7eb;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+
+      .profile-icon:hover {
+        background-color: #d1d5db;
+      }
+
+      .header-icon-btn {
+        background: none;
+        border: none;
+        padding: 8px;
+        cursor: pointer;
+        color: #6b7280;
+        font-size: 20px;
+        transition: color 0.2s;
+      }
+
+      .header-icon-btn:hover {
+        color: #2563eb;
+      }
+
+      /* Second Row - Main Options */
+      .main-options {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: #ffffff;
+        border-bottom: 1px solid #e5e7eb;
+        z-index: 1020;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Firefox */
+      }
+
+      .main-options::-webkit-scrollbar {
+        display: none; /* Chrome, Safari */
+      }
+
+      .option-btn {
+        min-width: 100px;
+        padding: 12px 16px;
+        border: none;
+        background: none;
+        color: #6b7280;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s;
+        white-space: nowrap;
+        border-bottom: 2px solid transparent;
+      }
+
+      .option-btn:hover {
+        color: #2563eb;
+      }
+
+      .option-btn.active {
+        color: #2563eb;
+        border-bottom-color: #2563eb;
+      }
+
+      .option-btn i {
+        display: block;
+        font-size: 20px;
+        margin-bottom: 4px;
+      }
+
+      /* Market Indices Cards */
+      .indices-scroll {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+
+      .indices-scroll::-webkit-scrollbar {
+        display: none;
+      }
+
+      .index-card {
+        min-width: 140px;
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        padding: 12px;
+        transition: box-shadow 0.2s;
+      }
+
+      .index-card:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      }
+
+      .index-name {
+        font-size: 12px;
+        color: #6b7280;
+        font-weight: 500;
+        margin-bottom: 6px;
+      }
+
+      .index-value {
+        font-size: 18px;
+        font-weight: 700;
+        color: #111827;
+        margin-bottom: 4px;
+      }
+
+      .index-change {
+        font-size: 13px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .index-change.positive {
+        color: #059669;
+      }
+
+      .index-change.negative {
+        color: #dc2626;
+      }
+
+      /* Category Cards */
+      .category-card {
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        padding: 20px;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.2s;
+        min-height: 120px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .category-card:hover {
+        border-color: #2563eb;
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+      }
+
+      .category-icon {
+        width: 48px;
+        height: 48px;
+        background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 12px;
+        font-size: 24px;
+        color: #2563eb;
+      }
+
+      .category-title {
+        font-size: 15px;
+        font-weight: 600;
+        color: #111827;
+        margin: 0;
+      }
+
+      /* News Card */
+      .news-card {
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        overflow: hidden;
+        transition: box-shadow 0.2s;
+        cursor: pointer;
+      }
+
+      .news-card:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      }
+
+      .news-image {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+        background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+      }
+
+      .news-content {
+        padding: 16px;
+      }
+
+      .news-title {
+        font-size: 15px;
+        font-weight: 600;
+        color: #111827;
+        margin-bottom: 8px;
+        line-height: 1.4;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .news-meta {
+        font-size: 12px;
+        color: #6b7280;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      /* Section Headers */
+      .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+      }
+
+      .section-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: #111827;
+        margin: 0;
+      }
+
+      .view-all-link {
+        color: #2563eb;
+        font-size: 14px;
+        font-weight: 600;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .view-all-link:hover {
+        color: #1e40af;
+      }
+
+      /* Quick Category Buttons */
+      .quick-category {
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        padding: 12px 8px;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.2s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .quick-category:hover {
+        border-color: #2563eb;
+        background: #eff6ff;
+      }
+
+      .quick-category i {
+        font-size: 24px;
+        color: #2563eb;
+      }
+
+      .quick-category span {
+        font-size: 12px;
+        font-weight: 600;
+        color: #374151;
+        line-height: 1.2;
+      }
+
+      /* Tool Card */
+      .tool-card {
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        padding: 16px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+
+      .tool-card:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        border-color: #2563eb;
+      }
+
+      .tool-icon {
+        width: 56px;
+        height: 56px;
+        background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        color: #2563eb;
+        flex-shrink: 0;
+      }
+
+      .tool-content {
+        flex: 1;
+      }
+
+      .tool-title {
+        font-size: 16px;
+        font-weight: 700;
+        color: #111827;
+        margin-bottom: 4px;
+      }
+
+      .tool-desc {
+        font-size: 13px;
+        color: #6b7280;
+        margin: 0;
+      }
+
+      .tool-arrow {
+        color: #9ca3af;
+        font-size: 20px;
+        flex-shrink: 0;
+      }
+
+      /* Footer */
+      .footer {
+        background-color: #f9fafb;
+        border-top: 1px solid #e5e7eb;
+        padding: 32px 0 24px;
+        margin-top: 48px;
+      }
+
+      .footer-link {
+        color: #6b7280;
+        text-decoration: none;
+        font-size: 14px;
+        transition: color 0.2s;
+      }
+
+      .footer-link:hover {
+        color: #2563eb;
+      }
+
+      .footer-divider {
+        border-top: 1px solid #e5e7eb;
+        margin: 24px 0 16px;
+      }
+
+      .copyright {
+        font-size: 13px;
+        color: #9ca3af;
+        text-align: center;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 767px) {
+        .site-name {
+          font-size: 16px;
+        }
+
+        .category-card {
+          min-height: 100px;
+          padding: 16px;
+        }
+
+        .category-icon {
+          width: 40px;
+          height: 40px;
+          font-size: 20px;
+        }
+      }
+
+      @media (min-width: 768px) {
+        body {
+          padding-top: 130px;
+        }
+
+        .main-options {
+          top: 65px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- STICKY HEADER - First Row -->
+    <header class="top-header">
+      <div class="d-flex align-items-center justify-content-between">
+        <!-- Left: Logo -->
+        <div class="logo-symbol">MF</div>
+
+        <!-- Right: Icons -->
+        <div class="d-flex align-items-center gap-3">
+          <button
+            class="header-icon-btn"
+            onclick="window.location.href='/chat'"
+            title="AI Chatbot"
+          >
+            <i class="bi bi-chat-dots"></i>
+          </button>
+          <button
+            class="header-icon-btn"
+            onclick="window.location.href='/alerts'"
+            title="Alerts"
+          >
+            <i class="bi bi-bell"></i>
+          </button>
+          <button
+            class="header-icon-btn"
+            onclick="window.location.href='/login-bootstrap.html'"
+            title="Profile"
+          >
+            <i class="bi bi-person-fill"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- SECOND ROW - Market Indices (Horizontal Scroll) -->
+    <nav class="main-options">
+      <div class="d-flex px-2">
+        <button class="option-btn active">
+          <span>Nifty</span>
+        </button>
+        <button class="option-btn">
+          <span>Mid Cap Nifty</span>
+        </button>
+        <button class="option-btn">
+          <span>Commodity Nifty</span>
+        </button>
+        <button class="option-btn">
+          <span>Craft Nifty</span>
+        </button>
+        <button class="option-btn">
+          <span>Sensex</span>
+        </button>
+        <button class="option-btn">
+          <span>Bank Nifty</span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main
+      class="container-fluid px-3 px-md-4"
+      style="max-width: 1200px; margin: 0 auto"
+    >
+      <!-- QUICK ACCESS CATEGORIES (Third Row from sketch) -->
+      <section class="mb-4">
+        <div class="row g-2">
+          <div class="col-4 col-md-2">
+            <div
+              class="quick-category"
+              onclick="window.location.href='/equity-funds-bootstrap.html'"
+            >
+              <i class="bi bi-graph-up-arrow"></i>
+              <span>Equity Fund</span>
+            </div>
+          </div>
+          <div class="col-4 col-md-2">
+            <div
+              class="quick-category"
+              onclick="window.location.href='/equity-funds-bootstrap.html?category=commodity'"
+            >
+              <i class="bi bi-coin"></i>
+              <span>Commodity</span>
+            </div>
+          </div>
+          <div class="col-4 col-md-2">
+            <div
+              class="quick-category"
+              onclick="window.location.href='/goal-planning'"
+            >
+              <i class="bi bi-bullseye"></i>
+              <span>Goal Planner</span>
+            </div>
+          </div>
+          <div class="col-4 col-md-2">
+            <div class="quick-category" onclick="window.location.href='/news'">
+              <i class="bi bi-newspaper"></i>
+              <span>Market News</span>
+            </div>
+          </div>
+          <div class="col-4 col-md-2">
+            <div
+              class="quick-category"
+              onclick="window.location.href='/portfolio'"
+            >
+              <i class="bi bi-bookmark"></i>
+              <span>Watch List</span>
+            </div>
+          </div>
+          <div class="col-4 col-md-2">
+            <div
+              class="quick-category"
+              onclick="window.location.href='/alerts'"
+            >
+              <i class="bi bi-bell"></i>
+              <span>Alerts</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FUND COMPARISON SECTION -->
+      <section class="mb-4">
+        <div class="section-header">
+          <h2 class="section-title">Fund Comparison</h2>
+          <a href="/compare" class="view-all-link">
+            View All <i class="bi bi-chevron-right"></i>
+          </a>
+        </div>
+
+        <div class="tool-card" onclick="window.location.href='/compare'">
+          <div class="tool-icon">
+            <i class="bi bi-arrow-left-right"></i>
+          </div>
+          <div class="tool-content">
+            <h3 class="tool-title">Compare Funds</h3>
+            <p class="tool-desc">Compare up to 5 mutual funds side by side</p>
+          </div>
+          <i class="bi bi-chevron-right tool-arrow"></i>
+        </div>
+      </section>
+
+      <!-- FUND OVERLAP SECTION -->
+      <section class="mb-4">
+        <div class="section-header">
+          <h2 class="section-title">Fund Overlap</h2>
+          <a href="/overlap" class="view-all-link">
+            Check Now <i class="bi bi-chevron-right"></i>
+          </a>
+        </div>
+
+        <div class="tool-card" onclick="window.location.href='/overlap'">
+          <div class="tool-icon">
+            <i class="bi bi-diagram-3"></i>
+          </div>
+          <div class="tool-content">
+            <h3 class="tool-title">Portfolio Overlap</h3>
+            <p class="tool-desc">Check common holdings between funds</p>
+          </div>
+          <i class="bi bi-chevron-right tool-arrow"></i>
+        </div>
+      </section>
+
+      <!-- PORTFOLIO TRACKER SECTION -->
+      <section class="mb-4">
+        <div class="section-header">
+          <h2 class="section-title">Portfolio Tracker</h2>
+          <a href="/portfolio" class="view-all-link">
+            View Portfolio <i class="bi bi-chevron-right"></i>
+          </a>
+        </div>
+
+        <div class="tool-card" onclick="window.location.href='/portfolio'">
+          <div class="tool-icon">
+            <i class="bi bi-pie-chart"></i>
+          </div>
+          <div class="tool-content">
+            <h3 class="tool-title">Track Your Portfolio</h3>
+            <p class="tool-desc">Monitor your mutual fund investments</p>
+          </div>
+          <i class="bi bi-chevron-right tool-arrow"></i>
+        </div>
+      </section>
+
+      <!-- INVESTMENT CALCULATOR SECTION -->
+      <section class="mb-4">
+        <div class="section-header">
+          <h2 class="section-title">Investment Calculator</h2>
+          <a href="/calculators" class="view-all-link">
+            Calculate <i class="bi bi-chevron-right"></i>
+          </a>
+        </div>
+
+        <div class="tool-card" onclick="window.location.href='/calculators'">
+          <div class="tool-icon">
+            <i class="bi bi-calculator"></i>
+          </div>
+          <div class="tool-content">
+            <h3 class="tool-title">SIP Calculator</h3>
+            <p class="tool-desc">Plan your investments with our calculators</p>
+          </div>
+          <i class="bi bi-chevron-right tool-arrow"></i>
+        </div>
+      </section>
+
+      <!-- FUND MANAGER SECTION -->
+      <section class="mb-4">
+        <div class="section-header">
+          <h2 class="section-title">Fund Manager</h2>
+          <a href="/fund-manager" class="view-all-link">
+            View All <i class="bi bi-chevron-right"></i>
+          </a>
+        </div>
+
+        <div class="tool-card" onclick="window.location.href='/fund-manager'">
+          <div class="tool-icon">
+            <i class="bi bi-person-badge"></i>
+          </div>
+          <div class="tool-content">
+            <h3 class="tool-title">Top Fund Managers</h3>
+            <p class="tool-desc">Explore fund managers and their portfolios</p>
+          </div>
+          <i class="bi bi-chevron-right tool-arrow"></i>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container" style="max-width: 1200px">
+        <div class="row g-4">
+          <div class="col-6 col-md-3">
+            <h4 class="h6 fw-bold mb-3">Company</h4>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="/about" class="footer-link">About Us</a>
+              </li>
+              <li class="mb-2">
+                <a href="/contact" class="footer-link">Contact Us</a>
+              </li>
+              <li class="mb-2">
+                <a href="/feedback" class="footer-link">Feedback</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-3">
+            <h4 class="h6 fw-bold mb-3">Resources</h4>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="/upcoming" class="footer-link">Upcoming Features</a>
+              </li>
+              <li class="mb-2">
+                <a href="/help" class="footer-link">Help Center</a>
+              </li>
+              <li class="mb-2"><a href="/faq" class="footer-link">FAQ</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <p class="copyright">© 2025 MF Analyzer. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap 5.3.8 JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      // Simple login check (placeholder - replace with actual authentication)
+      function checkLogin() {
+        const isLoggedIn = localStorage.getItem('userToken');
+        if (!isLoggedIn && window.location.pathname !== '/login') {
+          // window.location.href = '/login?redirect=' + window.location.pathname;
+        }
+      }
+
+      // Check login on page load
+      // checkLogin();
+    </script>
+  </body>
+</html>

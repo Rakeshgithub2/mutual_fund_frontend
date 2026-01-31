@@ -1,0 +1,61 @@
+# Don't upload these to Vercel
+
+# Backend files (Express server - not for Vercel)
+
+src/
+api/health.ts
+
+# Dependencies and build artifacts
+
+node_modules
+dist
+
+# Environment files
+
+.env
+.env.local
+.env.\_.local
+.env.comprehensive
+.env.production
+
+# Tests
+
+tests/
+_.test.ts
+_.spec.ts
+coverage/
+
+# Test and setup scripts
+
+test-_.js
+test-_.ps1
+check-_.js
+seed-_.js
+mock-server.js
+simple-_.js
+verify-_.js
+validate-_.js
+update-_.js
+final-integration-test.js
+
+# Logs and temp files
+
+\*.log
+.DS_Store
+.vscode/
+
+# Docker files
+
+docker/
+docker-compose*.yml
+Dockerfile*
+
+# Shell scripts
+
+_.ps1
+_.sh
+\*.bat
+
+# Documentation
+
+\*.md
