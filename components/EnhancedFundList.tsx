@@ -42,8 +42,8 @@ export const EnhancedFundList: React.FC<EnhancedFundListProps> = ({
 
   const [filters, setFilters] = useState<FundFilters>({
     page: 1,
-    limit: 100, // Increased from 20 to show more funds
-    sortBy: 'aum',
+    limit: 200, // Optimized for MongoDB free tier (max 200 per request)
+    sortBy: '_id', // Use indexed field for better performance
     sortOrder: 'desc',
     ...initialFilters,
   });

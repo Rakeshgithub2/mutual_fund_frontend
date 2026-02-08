@@ -27,10 +27,11 @@ export interface FundFilters {
     | 'returns.threeYear'
     | 'returns.fiveYear'
     | 'name'
-    | 'currentNav';
+    | 'currentNav'
+    | '_id'; // Added: indexed sorting for MongoDB free tier
   sortOrder?: 'asc' | 'desc';
   page?: number;
-  limit?: number;
+  limit?: number; // Max 200 recommended for MongoDB free tier
 }
 
 export interface Fund {
