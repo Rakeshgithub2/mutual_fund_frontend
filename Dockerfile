@@ -1,75 +1,66 @@
-# Multi-stage Dockerfile for Node.js TypeScript application
+# Multi-stage build for Next.js Frontend
+FROM node:20-alpine AS base
 
-# Base stage with Node.js
-FROM node:18-alpine AS base
+# 1. Install dependencies only when needed
+FROM base AS deps
+RUN apk add --no-cache libc6-compat curl
 WORKDIR /app
 
-# Install dependencies and build tools
-RUN apk add --no-cache \
-    python3 \
-    make \
-    g++ \
-    curl
+# Install pnpm
+RUN corepack enable pnpm
 
 # Copy package files
-COPY package*.json pnpm-lock.yaml* ./
+COPY package.json pnpm-lock.yaml* ./
 
-# Development stage
-FROM base AS development
-ENV NODE_ENV=development
+# Install dependencies with legacy peer deps for React 19
+RUN pnpm install --frozen-lockfile --no-optional
 
-# Install all dependencies (including dev dependencies)
-RUN npm install -g pnpm && \
-    pnpm install --frozen-lockfile
+# 2. Rebuild the source code only when needed
+FROM base AS builder
+WORKDIR /app
 
-# Copy source code
+# Copy node_modules from deps stage
+COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-# Generate Prisma client
+# Generate Prisma Client
 RUN npx prisma generate
 
-# Development command
-CMD ["pnpm", "run", "dev"]
-
-# Build stage
-FROM development AS build
+# Build Next.js - this creates .next/standalone folder
+ENV NEXT_TELEMETRY_DISABLED=1
 ENV NODE_ENV=production
+RUN corepack enable pnpm && pnpm run build
 
-# Build the application
-RUN pnpm run build
-
-# Production stage
-FROM node:18-alpine AS production
+# 3. Production image - copy only necessary files
+FROM base AS runner
 WORKDIR /app
 
-# Install curl for health checks
-RUN apk add --no-cache curl
+ENV NODE_ENV=production
+ENV NEXT_TELEMETRY_DISABLED=1
 
-# Copy package files
-COPY package*.json pnpm-lock.yaml* ./
+# Create non-root user
+RUN addgroup --system --gid 1001 nodejs && \
+    adduser --system --uid 1001 nextjs && \
+    apk add --no-cache curl
 
-# Install only production dependencies
-RUN npm install -g pnpm && \
-    pnpm install --frozen-lockfile --prod
+# Copy necessary files from builder
+COPY --from=builder /app/public ./public
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+COPY --from=builder --chown=nextjs:nodejs /app/node_modules/.prisma ./node_modules/.prisma
+COPY --from=builder /app/prisma ./prisma
 
-# Copy built application and Prisma schema
-COPY --from=build /app/dist ./dist
-COPY --from=build /app/prisma ./prisma
-COPY --from=build /app/node_modules/.prisma ./node_modules/.prisma
-
-# Create logs directory
-RUN mkdir -p logs && \
-    chown -R node:node /app
-
-# Switch to non-root user
-USER node
+USER nextjs
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
-    CMD curl -f http://localhost:3000/health || exit 1
+    CMD curl -f http://localhost:5001/api/health || exit 1
 
 # Expose port
-EXPOSE 3000
+EXPOSE 5001
 
-# Default command
-CMD ["npm", "start"]
+ENV PORT=5001
+ENV HOSTNAME="0.0.0.0"
+
+# Start Next.js server
+CMD ["node", "server.js"]

@@ -5,35 +5,42 @@ A modern, feature-rich mutual fund investment platform built with Next.js 14, Ty
 ## 🚀 Tech Stack
 
 ### Core Framework
+
 - **Next.js 14+** - React framework with App Router
 - **React 18** - UI library
 - **TypeScript** - Type-safe development
 - **Node.js 20+** - Runtime environment
 
 ### UI & Styling
+
 - **Tailwind CSS** - Utility-first CSS framework
 - **Radix UI** - Accessible component primitives
 - **shadcn/ui** - High-quality component library
 - **Lucide React** - Beautiful icon library
 
 ### State Management & Data Fetching
+
 - **React Hooks** - useState, useEffect, useContext
 - **Zustand** - Lightweight state management (if used)
 - **Axios** - HTTP client for API calls
 
 ### Forms & Validation
+
 - **React Hook Form** - Performant form management
 - **Zod** - TypeScript-first schema validation
 
 ### Authentication
+
 - **JWT** - JSON Web Token authentication
 - **Google OAuth** - Social login integration
 - **bcrypt** - Password hashing
 
 ### Real-time Features
+
 - **Socket.IO Client** - Real-time updates for market data
 
 ### Additional Tools
+
 - **Prisma** - Type-safe database ORM (for API routes if needed)
 - **date-fns** - Modern date utility library
 - **clsx** - Utility for constructing className strings
@@ -41,6 +48,7 @@ A modern, feature-rich mutual fund investment platform built with Next.js 14, Ty
 ## 📋 Features
 
 ### User Authentication
+
 - ✅ Email/Password registration and login
 - ✅ Google OAuth integration
 - ✅ JWT-based authentication
@@ -48,6 +56,7 @@ A modern, feature-rich mutual fund investment platform built with Next.js 14, Ty
 - ✅ Token refresh mechanism
 
 ### Fund Discovery
+
 - ✅ Browse 1000+ mutual funds
 - ✅ Advanced search and filtering
 - ✅ Category-based navigation
@@ -55,6 +64,7 @@ A modern, feature-rich mutual fund investment platform built with Next.js 14, Ty
 - ✅ Fund comparison tools
 
 ### Portfolio Management
+
 - ✅ Add funds to portfolio
 - ✅ Track investments
 - ✅ Performance analytics
@@ -62,12 +72,14 @@ A modern, feature-rich mutual fund investment platform built with Next.js 14, Ty
 - ✅ SIP calculator
 
 ### Market Insights
+
 - ✅ Real-time market indices (Nifty 50, Sensex, etc.)
 - ✅ Latest financial news
 - ✅ Fund performance charts
 - ✅ Sector allocation visualization
 
 ### User Experience
+
 - ✅ Responsive design (mobile, tablet, desktop)
 - ✅ Dark mode support
 - ✅ Infinite scroll pagination
@@ -301,7 +313,7 @@ export default apiClient;
    - Amplify auto-detects Next.js
    - Add environment variables in Amplify settings:
      ```
-     NEXT_PUBLIC_API_URL=http://13.60.156.3:3002
+     NEXT_PUBLIC_API_URL=http://YOUR_EC2_IP:3002
      NEXT_PUBLIC_GOOGLE_CLIENT_ID=your-client-id
      ```
 
@@ -350,7 +362,7 @@ Key configurations in `next.config.mjs`:
 const nextConfig = {
   // Enable image optimization
   images: {
-    unoptimized: true,  // Set to false for optimization
+    unoptimized: true, // Set to false for optimization
     remotePatterns: [
       {
         protocol: 'https',
@@ -358,7 +370,7 @@ const nextConfig = {
       },
     ],
   },
-  
+
   // Fix Google OAuth COOP errors
   async headers() {
     return [
@@ -373,7 +385,7 @@ const nextConfig = {
       },
     ];
   },
-  
+
   // Disable development indicators
   devIndicators: false,
   reactStrictMode: true,
@@ -383,6 +395,7 @@ const nextConfig = {
 ### Tailwind Configuration
 
 Custom theme configuration in `tailwind.config.ts` with:
+
 - Custom color palette
 - Extended spacing
 - Custom animations
@@ -455,18 +468,18 @@ pnpm build
 
 ### Required Variables
 
-| Variable | Description | Example |
-|----------|-------------|---------|
-| `NEXT_PUBLIC_API_URL` | Backend API base URL (no trailing slash) | `http://localhost:3002` |
-| `NEXT_PUBLIC_GOOGLE_CLIENT_ID` | Google OAuth client ID | `xxx.apps.googleusercontent.com` |
+| Variable                       | Description                              | Example                          |
+| ------------------------------ | ---------------------------------------- | -------------------------------- |
+| `NEXT_PUBLIC_API_URL`          | Backend API base URL (no trailing slash) | `http://localhost:3002`          |
+| `NEXT_PUBLIC_GOOGLE_CLIENT_ID` | Google OAuth client ID                   | `xxx.apps.googleusercontent.com` |
 
 ### Optional Variables
 
-| Variable | Description | Example |
-|----------|-------------|---------|
-| `NEXT_PUBLIC_FRONTEND_URL` | Frontend URL for OAuth redirects | `http://localhost:5001` |
-| `NEXT_PUBLIC_GA_MEASUREMENT_ID` | Google Analytics tracking ID | `G-XXXXXXXXXX` |
-| `NEXT_PUBLIC_GEMINI_KEY` | Gemini AI API key | `AIza...` |
+| Variable                        | Description                      | Example                 |
+| ------------------------------- | -------------------------------- | ----------------------- |
+| `NEXT_PUBLIC_FRONTEND_URL`      | Frontend URL for OAuth redirects | `http://localhost:5001` |
+| `NEXT_PUBLIC_GA_MEASUREMENT_ID` | Google Analytics tracking ID     | `G-XXXXXXXXXX`          |
+| `NEXT_PUBLIC_GEMINI_KEY`        | Gemini AI API key                | `AIza...`               |
 
 ## 🔐 Security Best Practices
 

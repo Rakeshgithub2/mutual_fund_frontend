@@ -7,6 +7,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const nextConfig = {
   // Fix workspace root detection warning (multiple lockfiles)
   outputFileTracingRoot: __dirname,
+  // Enable standalone output for Docker deployment
+  output: 'standalone',
   typescript: {
     ignoreBuildErrors: true,
   },
